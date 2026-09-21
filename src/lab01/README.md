@@ -5,7 +5,7 @@
 Ввод: имя (строка), возраст (целое).  
 Вывод: `Привет, <имя>! Через год тебе будет <возраст+1>.`  
 
-![img1](https://github.com/katerina7682/python_labs/issues/1#issue-5531847717) 
+![img1](https://github.com/katerina7682/python_labs/raw/main/art/python_labs/images/lab01/img1.png) 
 
 <h3>Задание 2 — Сумма и среднее</h3>  
 
