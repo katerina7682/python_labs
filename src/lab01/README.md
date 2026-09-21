@@ -4,7 +4,7 @@
 Файл: `src/01_greeting.py`  
 Ввод: имя (строка), возраст (целое).  
 Вывод: `Привет, <имя>! Через год тебе будет <возраст+1>.`  
-![](C:\Users\Екатерина\Desktop\python_labs\images\lab01\img1.png) 
+![](https://github.com/katerina7682/python_labs/main/images/lab01/img1.png) 
 <h3>Задание 2 — Сумма и среднее</h3>  
 
 Файл: `src/02_sum_avg.py`  
