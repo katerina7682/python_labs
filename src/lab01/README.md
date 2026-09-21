@@ -13,7 +13,7 @@
 **Ввод: два числа (вещественные), допускаются точка или запятая.**  
 Вывод: `sum=<...>; avg=<...>` — значения печатать с 2 знаками. 
  
-![img2](https://github.com/katerina7682/python_labs/raw/main/art/python_labs/images/lab01/img2.png "img2") 
+![img2](https://github.com/katerina7682/python_labs/blob/main/images/lab01/img2.png "img2") 
 
 <h3>Задание 3 — Чек: скидка и НДС</h3>  
 
@@ -25,7 +25,7 @@
 `total = base + vat_amount`  
 Вывод: по строкам, 2 знака после запятой. 
 
-![img3](https://github.com/katerina7682/python_labs/raw/main/art/python_labs/images/lab01/img3.png "img3") 
+![img3](https://github.com/katerina7682/python_labs/blob/main/images/lab01/img3.png "img3") 
 
 <h3>Задание 4 — Минуты → ЧЧ:ММ</h3>  
 
@@ -33,7 +33,7 @@
 Ввод: `m` — целые минуты.  
 Вывод: `ЧЧ:ММ` минуты вывести как {min:02d}.  
 
-![img4](https://github.com/katerina7682/python_labs/raw/main/art/python_labs/images/lab01/img4.png "img4") 
+![img4](https://github.com/katerina7682/python_labs/blob/main/images/lab01/img4.png "img4") 
 
 <h3>Задание 5 — Инициалы и длина строки</h3>  
 
@@ -41,4 +41,4 @@
 Ввод: ФИО одной строкой (могут быть лишние пробелы).  
 Вывод: инициалы (верхний регистр) и длина исходной строки без лишних пробелов.
 
-![img5](https://github.com/katerina7682/python_labs/raw/main/art/python_labs/images/lab01/img5.png "img5") 
+![img5](https://github.com/katerina7682/python_labs/blob/main/images/lab01/img5.png "img5") 
