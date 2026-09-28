@@ -1,6 +1,6 @@
 <h1>ЛР2 — Коллекции и матрицы (list/tuple/set/dict)</h1>  
 
-<h3>Задание 1 — `arrays.py`</h3>  
+<h3>Задание 1 — arrays.py</h3>  
 Реализуйте функции:
 
 1.`min_max(nums: list[float | int]) -> tuple[float | int, float | int]`  
