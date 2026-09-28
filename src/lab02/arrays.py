@@ -1,19 +1,19 @@
 def min_max(nums: list[float|int]):
+    if not nums:
+        return 'ValueError'
     mx=nums[0]
     mn=nums[0]
     for i in nums:
         if i>mx:
             mx=i
-        if i<mn:
+        elif i<mn:
             mn=i
     return ((mn,mx))
-print(min_max([2,6,4.5,8.7,3,10,89,90]))
 
 def unique_sorted(nums: list[float|int]):
     nums=set(nums)
     nums=list(nums)
     return nums
-print(unique_sorted([1,5,7,4,2,9,8,2,2,5]))
 
 def flatten(mat: list[list|tuple]):
     array=[]
@@ -24,5 +24,20 @@ def flatten(mat: list[list|tuple]):
         else:
             return 'TypeError'
     return array
-print(flatten([[2,5],[7,6],[34,80,96,57]]))
              
+print(min_max([3,-1,5,5,0]))
+print(min_max([42]))
+print(min_max([-5,-2,-9]))
+print(min_max([]))
+print(min_max([1.5,2,2.0,-3.1]))
+print()
+print(unique_sorted([3,1,2,1,3]))
+print(unique_sorted([]))
+print(unique_sorted([-1,-1,0,2,2]))
+print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
+print()
+print(flatten([[1, 2], [3, 4]]))
+print(flatten([[1, 2], (3, 4, 5)]))
+print(flatten([[1], [], [2, 3]]))
+print(flatten([[1, 2], "ab"]))
+
