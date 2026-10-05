@@ -1,4 +1,4 @@
-from src.lib.arrays import*
+from src.lib.arrays import min_max
              
 print(min_max([3,-1,5,5,0]))
 print(min_max([42]))

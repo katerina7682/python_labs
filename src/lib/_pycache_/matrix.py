@@ -1,5 +1,15 @@
 def transpose(mat: list[list[float|int]]):
-    
+    '''Меняет строки и столбцы местами
+
+    Args:
+        mat: Матрица
+
+    Returns:
+        mat2: Транспонированная матрица
+
+    Raises:
+        ValueError: Строки разной длины
+    '''
     if mat==[]:
         return []
     m=max(list(map(len,mat)))
@@ -11,6 +21,17 @@ def transpose(mat: list[list[float|int]]):
             mat2[j][i]=mat[i][j]
     return mat2
 def row_sums(mat:list[list[float|int]]):
+    '''Сумма по каждой строке
+
+    Args: 
+        mat: Матрица чисел
+
+    Returns:
+        mat2: Список сумм по строке
+
+    Raises:
+        ValueError: Строки разной длины
+    '''
     mat2=[]
     m=list(map(len,mat))
     m=set(m)
@@ -19,6 +40,17 @@ def row_sums(mat:list[list[float|int]]):
         mat2.append(sum(i))
     return mat2
 def col_sums(mat:list[list[float|int]]):
+    '''Сумма по каждому столбцу
+
+    Args:
+        mat: Матрица чисел
+
+    Returns:
+        m2: Список сумм по столбцам
+
+    Raises:
+        ValueError: Строки разной длины
+    '''
     m=list(map(len,mat))
     if len(set(m))>1: return 'ValueError'
     m2=[0]*m[0]
