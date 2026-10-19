@@ -1,4 +1,4 @@
-</h1>Лабораторная работа 3</h1>
+</h1>Лабораторная работа 3</h1>  
 </h3>Задание 1</h3>
 
 1. Функция ```normalize```:  
@@ -33,4 +33,4 @@
 "Hello\r\nWorld" → "hello world"
 " двойные пробелы " → "двойные пробелы"
 
-![img1](  "img1")
+![img1](https://github.com/katerina7682/python_labs/blob/main/images/lab03/img1.png "img1")
