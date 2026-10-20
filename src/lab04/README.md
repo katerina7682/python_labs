@@ -20,7 +20,7 @@
 
 ![img0](https://github.com/katerina7682/python_labs/blob/main/images/lab04/img0.png "img0")   
 
-![img1](https://github.com/katerina7682/python_labs/blob/main/images/lab04/img0.png "img1")   
+![img1](https://github.com/katerina7682/python_labs/blob/main/images/lab04/img1.png "img1")   
 
 <h3>Краевые случаи</h3>   
 
