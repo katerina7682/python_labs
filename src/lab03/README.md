@@ -17,7 +17,7 @@
 
 ![img1](https://github.com/katerina7682/python_labs/blob/main/images/lab03/img1.png "img1")
 
-2. Функция ```tokenize```
+2. Функция ```tokenize```:
 
 Входные данные:
 
@@ -35,7 +35,7 @@
 
 ![img2](https://github.com/katerina7682/python_labs/blob/main/images/lab03/img2.png "img2")
 
-3. Функции ```count_freq | top_n```
+3. Функции ```count_freq | top_n```:
 
 Входные данные:
 

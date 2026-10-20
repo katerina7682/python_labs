@@ -1,6 +1,19 @@
 from pathlib import Path
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
 
+    """Читает файл целиком и возвращает содержимое одной строкой.
+
+    Args:
+        path: путь к файлу.
+        encoding: кодировка файла (по умолчанию UTF-8). Чтобы выбрать другую
+            кодировку, передайте её явно, например: encoding="cp1251".
+
+    Raises:
+        FileNotFoundError: файл не найден (не перехватывается).
+        UnicodeDecodeError: кодировка не подходит (не перехватывается).
+
+    Пустой файл даёт пустую строку.
+    """
     if not path:
         raise FileNotFoundError('Файл не найден')
     if encoding!='utf-8': 
@@ -12,6 +25,18 @@ from pathlib import Path
 from typing import Iterable, Sequence
 
 def write_csv(rows: list[tuple | list], path: str | Path, header: tuple[str, ...] | None = None) -> None:
+    """Создаёт или перезаписывает CSV-файл (разделитель запятая, UTF-8).
+
+    Args:
+        rows: строки данных (кортежи или списки).
+        path: путь к CSV-файлу; родительские папки создаются автоматически.
+        header: необязательный заголовок, записывается первой строкой.
+
+    Raises:
+        ValueError: если строки (или заголовок) имеют разную длину.
+
+    Пустой rows без header даёт пустой файл; с header в файле только заголовок.
+    """
     p = Path(path)
     # превращаем rows в обычный список, чтобы можно было
     # пройтись по нему несколько раз (для проверки и для записи)
