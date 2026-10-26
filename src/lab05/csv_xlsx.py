@@ -9,8 +9,14 @@ from .json_csv import proverka
 CSV_PATH = 'data/samples/cities.csv'
 CSV_TO_XL = 'data/out/xl_cities.xlsx'
 
-def csv_xlsx(csv_path, xlsx_path):
-
+def csv_to_xlsx(csv_path, xlsx_path):
+    """
+    Конвертирует CSV в XLSX.
+    Использовать openpyxl ИЛИ xlsxwriter.
+    Первая строка CSV — заголовок.
+    Лист называется "Sheet1".
+    Колонки — автоширина по длине текста (не менее 8 символов).
+    """
     with proverka(csv_path, '.csv').open(newline="", encoding='utf-8') as f:
         rows = list(csv.reader(f))
 
