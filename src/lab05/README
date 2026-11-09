@@ -6,14 +6,17 @@
 <h2>Задание A — JSON ↔ CSV</h2>  
 
 <h3>Функция proverka</h3>  
-```def proverka(path, EXT):
+
+```python 
+def proverka(path, EXT):
     p = Path(path)
 
     if p.suffix.lower() != EXT:
         raise ValueError(f"Неверный тип файла")
     if not p.exists():
         raise FileNotFoundError(f"Файл {path} не существует")
-    return p```
+    return p 
+    ```
 
 <h3>Функция json_to_csv</h3>  
 
@@ -34,7 +37,8 @@
     with open(csv_path, "w", newline="", encoding='utf-8') as f:
         w = csv.DictWriter(f, fieldnames=fields, restval="")
         w.writeheader()
-        w.writerows(data)```  
+        w.writerows(data)```    
+
 
 <h3>Функция csv_to_json</h3>   
 
@@ -56,7 +60,11 @@
     Path(json_path).parent.mkdir(parents=True, exist_ok=True)
 
     with open(json_path, "w", encoding='utf-8') as f:
-        json.dump(rows, f, ensure_ascii=False, indent = 2)```
+        json.dump(rows, f, ensure_ascii=False, indent = 2)```  
+
+![img0](https://github.com/katerina7682/python_labs/blob/main/images/lab05/img0.png "img0")
+
+![img1](https://github.com/katerina7682/python_labs/blob/main/images/lab05/img1.png "img1")
 
 <h3>Запуск модуля JSON ↔ CSV</h3>
 Из корня репозитория:  
@@ -99,3 +107,5 @@
 <h3>Запуск модуля CSV → XLSX</h3>
 ```python -m src.lab05.csv_xlsx```
 После запуска создаётся файл data/lab05/out/people.xlsx.
+
+![img2](https://github.com/katerina7682/python_labs/blob/main/images/lab05/img2.png "img2")
