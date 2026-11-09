@@ -1,0 +1,101 @@
+<h1>Отчет по лабораторной работе №5 — JSON, CSV и XLSX</h1>  
+<h2>Структура лабораторной работы</h2>  
+- src/lab05/json_csv.py — преобразование JSON в CSV и CSV в JSON;  
+- src/lab05/csv_xlsx.py — преобразование CSV в XLSX.  
+Входные примеры находятся в каталоге data/lab05/samples/, а результаты конвертаций — в каталоге data/lab05/out/.  
+<h2>Задание A — JSON ↔ CSV</h2>  
+
+<h3>Функция proverka</h3>  
+```def proverka(path, EXT):
+    p = Path(path)
+
+    if p.suffix.lower() != EXT:
+        raise ValueError(f"Неверный тип файла")
+    if not p.exists():
+        raise FileNotFoundError(f"Файл {path} не существует")
+    return p```
+
+<h3>Функция json_to_csv</h3>  
+
+    ```def json_to_csv(json_path, csv_path):
+    """
+    Преобразует JSON-файл в CSV.
+    Поддерживает список словарей [{...}, {...}], заполняет отсутствующие поля пустыми строками.
+    Кодировка UTF-8. Порядок колонок — как в первом объекте или алфавитный (указать в README).
+    """
+    with proverka(json_path, ".json").open(encoding='utf-8') as f:
+        data = json.load(f)
+
+    if not isinstance(data, list) or not data or not all(isinstance(r, dict) for r in data):
+        raise ValueError('Нет данных или неподдерживаемый тип данных')
+    fields = list(dict.fromkeys(i for r in data for i in r))
+    Path(csv_path).parent.mkdir(parents=True, exist_ok=True)
+
+    with open(csv_path, "w", newline="", encoding='utf-8') as f:
+        w = csv.DictWriter(f, fieldnames=fields, restval="")
+        w.writeheader()
+        w.writerows(data)```  
+
+<h3>Функция csv_to_json</h3>   
+
+```def csv_to_json(csv_path, json_path):
+    """
+    Преобразует CSV в JSON (список словарей).
+    Заголовок обязателен, значения сохраняются как строки.
+    json.dump(..., ensure_ascii=False, indent=2)
+    """
+    with proverka(csv_path, '.csv').open(newline="", encoding='utf-8') as f:
+        read = csv.DictReader(f)
+        if not read.fieldnames:
+            raise ValueError('CSV без заголовка')
+        rows = list(read)
+
+    if not rows:
+        raise ValueError('CSV пустой')
+
+    Path(json_path).parent.mkdir(parents=True, exist_ok=True)
+
+    with open(json_path, "w", encoding='utf-8') as f:
+        json.dump(rows, f, ensure_ascii=False, indent = 2)```
+
+<h3>Запуск модуля JSON ↔ CSV</h3>
+Из корня репозитория:  
+
+```python -m src.lab05.json_csv```
+При таком запуске создаются:  
+
+- data/lab05/out/people_from_csv.json;
+- data/lab05/out/people_from_json.csv.  
+
+<h2>Задание B — CSV → XLSX</h2>
+
+<h3>Функция csv_to_xlsx</h3>   
+
+```def csv_to_xlsx(csv_path, xlsx_path):
+    """
+    Конвертирует CSV в XLSX.
+    Использовать openpyxl ИЛИ xlsxwriter.
+    Первая строка CSV — заголовок.
+    Лист называется "Sheet1".
+    Колонки — автоширина по длине текста (не менее 8 символов).
+    """
+    with proverka(csv_path, '.csv').open(newline="", encoding='utf-8') as f:
+        rows = list(csv.reader(f))
+
+    if not rows:
+        raise ValueError('Пустой CSV')
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "Sheet1"
+    for r in rows:
+        ws.append(r)
+    for i in range(len(rows[0])):
+        width = max(8, *[len(r[i]) for r in rows if i < len(r)])
+        ws.column_dimensions[get_column_letter(i+1)].width = width
+
+    Path(xlsx_path).parent.mkdir(parents=True, exist_ok=True)
+    wb.save(xlsx_path)```  
+
+<h3>Запуск модуля CSV → XLSX</h3>
+```python -m src.lab05.csv_xlsx```
+После запуска создаётся файл data/lab05/out/people.xlsx.
