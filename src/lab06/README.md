@@ -1,6 +1,6 @@
 <h1>ЛР6 — CLI‑утилиты с argparse (cat/grep‑lite + конвертеры):</h1>  
 
-1. Модуль src/lab06/cli_text.py с подкомандами:
+<h3>1. Модуль src/lab06/cli_text.py с подкомандами:</h3>
 
 stats --input <txt></txt> [--top 5] — анализ частот слов в тексте (использовать функции из lab03);
 cat --input <path></path> [-n] — вывод содержимого файла построчно (с нумерацией при -n).
@@ -10,7 +10,7 @@ cat --input <path></path> [-n] — вывод содержимого файла 
 ![img 2](https://github.com/katerina7682/python_labs/blob/main/images/lab06/img2.png "img2")
 
 
-2. Модуль src/lab06/cli_convert.py с подкомандами:
+<h3>2. Модуль src/lab06/cli_convert.py с подкомандами:</h3>
 
 json2csv --in data/samples/people.json --out data/out/people.csv
 csv2json --in data/samples/people.csv --out data/out/people.json
