@@ -7,7 +7,8 @@
 
 <h3>Функция proverka</h3>  
 
-```python 
+```python
+
 def proverka(path, EXT):
     p = Path(path)
 
@@ -16,6 +17,7 @@ def proverka(path, EXT):
     if not p.exists():
         raise FileNotFoundError(f"Файл {path} не существует")
     return p 
+
     ```
 
 <h3>Функция json_to_csv</h3>  
