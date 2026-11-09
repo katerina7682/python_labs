@@ -2,11 +2,11 @@ import csv
 import json
 from pathlib import Path
 
-JSON_PATH = "src/data/samples/people.json"
-CSV_PATH = "src/data/samples/people.csv"
+JSON_PATH = "data/samples/people.json"
+CSV_PATH = "data/samples/people.csv"
 
-CSV_TO = 'src/data/out/people_from_csv_to_json.json'
-JSON_TO = 'src/data/out/people_from_json_to_csv.csv'
+CSV_TO = 'data/out/people_from_csv_to_json.json'
+JSON_TO = 'data/out/people_from_json_to_csv.csv'
 
 def proverka(path, EXT):
     p = Path(path)

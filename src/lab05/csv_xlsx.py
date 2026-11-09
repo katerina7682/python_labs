@@ -35,4 +35,4 @@ def csv_to_xlsx(csv_path, xlsx_path):
     wb.save(xlsx_path)
 
 if __name__ == "__main__":
-    csv_xlsx(CSV_PATH, CSV_TO_XL)
+    csv_to_xlsx(CSV_PATH, CSV_TO_XL)
